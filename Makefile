@@ -5,7 +5,7 @@ REPO=github.com/coreos/updateservicectl
 ROLLER_URL ?= http://localhost:8000
 
 all:
-	go build -o bin/updateservicectl $(REPO)
+	go build -mod vendor -o bin/updateservicectl
 
 vendor:
 	glide update --strip-vendor
