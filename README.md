@@ -1,6 +1,6 @@
-# updateservicectl - CoreOS update service CLI
+# updateservicectl - Flatcar Container Linux update service CLI
 
-`updateservicectl` lets you control and test the CoreOS update service. Subcommands
+`updateservicectl` lets you control and test the Flatcar Container Linux update service. Subcommands
 let you manage users, groups, packages and write a very simple client that gets
 its state via environment variables.
 
@@ -26,7 +26,7 @@ Once you have gained access to your update service installation, check out the [
 
 ## Building the Client
 
-Major releases for all platforms are listed under the [Releases tab](https://github.com/coreos/updateservicectl/releases) on this repository. If you'd like to build your own client:
+Major releases for all platforms are listed under the [Releases tab](https://github.com/flatcar-linux/updateservicectl/releases) on this repository. If you'd like to build your own client:
 
 1. `./build` or `make` (depending on the version of `updateservicectl` you are building)
 2. The client is now built. Use it with `./bin/updateservicectl <command>`
@@ -36,9 +36,9 @@ Major releases for all platforms are listed under the [Releases tab](https://git
 You can build a release of a specfic version by running
 `scripts/build-release <git-tag-of-version>`.
 
-If you are a CoreOS developer, you may bump the version with
-`scripts/bump-version <version>`. You can do this and build a release
-at the same time with `scripts/new-release`.
+If you are a Flatcar Container Linux developer, you may bump the version with
+`scripts/bump-version <version>`. You can do this and build a release at the
+same time with `scripts/new-release`.
 
 Example: `scripts/new-release 0.2.0+git`.
 

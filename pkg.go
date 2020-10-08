@@ -25,7 +25,7 @@ import (
 	"github.com/cheggaaa/pb"
 	"github.com/coreos/go-semver/semver"
 
-	update "github.com/coreos/updateservicectl/client/update/v1"
+	update "github.com/flatcar-linux/updateservicectl/client/update/v1"
 )
 
 type MetadataFile struct {
