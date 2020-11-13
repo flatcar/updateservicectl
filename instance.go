@@ -8,6 +8,7 @@ import (
 	"math/rand"
 	"net/http"
 	"strings"
+	"sync/atomic"
 	"text/tabwriter"
 	"time"
 
@@ -32,6 +33,7 @@ var (
 		pingOnly      int
 		version       string
 		forceUpdate   bool
+		benchSeconds  int64
 	}
 
 	cmdInstance = &Command{
@@ -42,6 +44,7 @@ var (
 			cmdInstanceListUpdates,
 			cmdInstanceListAppVersions,
 			cmdInstanceFake,
+			cmdInstanceBench,
 		},
 	}
 
@@ -64,6 +67,13 @@ var (
 		Usage:       "[OPTION]...",
 		Description: "Simulate multiple fake instances.",
 		Run:         instanceFake,
+	}
+
+	cmdInstanceBench = &Command{
+		Name:        "instance bench",
+		Usage:       "[OPTION]...",
+		Description: "Benchmark with multiple fresh fake instances doing one request.",
+		Run:         instanceBench,
 	}
 )
 
@@ -92,6 +102,15 @@ func init() {
 	instanceFlags.groupId.required = true
 	cmdInstanceFake.Flags.StringVar(&instanceFlags.version, "version", "0.0.0", "Version to report.")
 	cmdInstanceFake.Flags.BoolVar(&instanceFlags.forceUpdate, "force-update", false, "Force updates regardless of rate limiting")
+
+	cmdInstanceBench.Flags.BoolVar(&instanceFlags.verbose, "verbose", false, "Print out the request bodies")
+	cmdInstanceBench.Flags.IntVar(&instanceFlags.clientsPerApp, "clients-per-app", 20, "Number of concurrent clients.")
+	cmdInstanceBench.Flags.StringVar(&instanceFlags.OEM, "oem", "fakeclient", "oem to report")
+	cmdInstanceBench.Flags.Var(&instanceFlags.appId, "app-id", "Application ID to update.")
+	cmdInstanceBench.Flags.Var(&instanceFlags.groupId, "group-id", "Group ID to update.")
+	cmdInstanceBench.Flags.StringVar(&instanceFlags.version, "version", "0.0.0", "Version to report.")
+	cmdInstanceBench.Flags.BoolVar(&instanceFlags.forceUpdate, "force-update", false, "Force updates regardless of rate limiting")
+	cmdInstanceBench.Flags.Int64Var(&instanceFlags.benchSeconds, "seconds", 10, "Benchmark duration")
 }
 
 func instanceListUpdates(args []string, service *update.Service, out *tabwriter.Writer) int {
@@ -370,5 +389,73 @@ func instanceFake(args []string, service *update.Service, out *tabwriter.Writer)
 	// run forever
 	wait := make(chan bool)
 	<-wait
+	return OK
+}
+
+func bench(ops *uint64, id *uint64) {
+	conf := &serverConfig{
+		server: globalFlags.Server,
+	}
+
+	c := &Client{
+		Id:          "filled-out-below",
+		SessionId:   uuid.New(),
+		Version:     instanceFlags.version,
+		AppId:       instanceFlags.appId.String(),
+		Track:       instanceFlags.groupId.String(),
+		config:      conf,
+		forceUpdate: instanceFlags.forceUpdate,
+	}
+
+	for {
+		i := atomic.AddUint64(id, 1) // Generate unique new ID
+		c.Id = "deadbeefdeadbeef" + fmt.Sprintf("%016x", i)
+		resp, err := c.MakeRequest("3", "1", true, true)
+		// Log errors because they are not expected
+		if err != nil {
+			c.Log("err: %v\n", err)
+		} else if resp.Apps[0].UpdateCheck.Status != "ok" {
+			c.Log("status: %s\n", resp.Apps[0].UpdateCheck.Status)
+		} else if instanceFlags.verbose {
+			c.Log("update to %v\n", resp.Apps[0].UpdateCheck.Manifest.Version)
+		}
+		// No full update circle, just one request
+		atomic.AddUint64(ops, 1) // Increase global response count
+	}
+}
+
+func instanceBench(args []string, service *update.Service, out *tabwriter.Writer) int {
+	if instanceFlags.appId.Get() == nil || instanceFlags.groupId.Get() == nil || instanceFlags.benchSeconds == 0 {
+		return ERROR_USAGE
+	}
+
+	var ops uint64 // Global response counter
+	var id uint64  // Global ID counter for the second half of the instance ID
+	rand.Seed(time.Now().UnixNano())
+	id = rand.Uint64() // Random start point for uniqueness
+	for i := 0; i < instanceFlags.clientsPerApp; i++ {
+		go bench(&ops, &id)
+	}
+
+	ticker := time.NewTicker(time.Second)
+	start := time.Now()
+	go func() {
+		for {
+			select {
+			case t := <-ticker.C:
+				responsesSoFar := atomic.LoadUint64(&ops)
+				duration := t.Sub(start)
+				fmt.Printf("Got %v responses so far, average %v per second\n", responsesSoFar, float64(responsesSoFar)/duration.Seconds())
+			}
+		}
+	}()
+
+	time.Sleep(time.Duration(instanceFlags.benchSeconds) * time.Second)
+	ticker.Stop()
+	responses := atomic.LoadUint64(&ops)
+	fmt.Printf("Ran %v seconds with %v concurrent requests\n", instanceFlags.benchSeconds, instanceFlags.clientsPerApp)
+	fmt.Printf("Total responses to unique new clients: %v\n", responses)
+	fmt.Printf("Responses per second : %v\n", float64(responses)/float64(instanceFlags.benchSeconds))
+	// Returning here kills running goroutines
 	return OK
 }
