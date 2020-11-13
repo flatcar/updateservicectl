@@ -10,8 +10,6 @@ github.com/coreos/go-semver/semver
 # github.com/coreos/hawk-go v0.0.0-20151113011121-e2691d10fc25
 ## explicit
 github.com/coreos/hawk-go
-# github.com/coreos/updateservicectl v2.1.0+incompatible
-## explicit
 # github.com/olekukonko/ts v0.0.0-20140412220145-ecf753e7c962
 ## explicit
 github.com/olekukonko/ts
@@ -27,3 +25,5 @@ golang.org/x/net/context/ctxhttp
 google.golang.org/api/gensupport
 google.golang.org/api/googleapi
 google.golang.org/api/googleapi/internal/uritemplates
+# launchpad.net/gocheck v0.0.0-20140225173054-000000000087
+## explicit
