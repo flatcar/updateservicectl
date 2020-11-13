@@ -14,7 +14,7 @@ import (
 	"github.com/coreos/go-omaha/omaha"
 	"github.com/pborman/uuid"
 
-	update "github.com/coreos/updateservicectl/client/update/v1"
+	update "github.com/flatcar-linux/updateservicectl/client/update/v1"
 )
 
 var (

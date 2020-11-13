@@ -6,9 +6,6 @@ github.com/coreos/go-semver v0.0.0-20140704231441-6fe83ccda8fb h1:kEZpAgkWdDhSB+
 github.com/coreos/go-semver v0.0.0-20140704231441-6fe83ccda8fb/go.mod h1:nnelYz7RCh+5ahJtPPxZlU+153eP4D4r3EedlOD2RNk=
 github.com/coreos/hawk-go v0.0.0-20151113011121-e2691d10fc25 h1:eYVvy3NBpDY/2c0hgLCD2QhVrPVUVOFa36WfqhqyV44=
 github.com/coreos/hawk-go v0.0.0-20151113011121-e2691d10fc25/go.mod h1:yAVBs4OM2opFfxOx1NAfmH3sVlBzRT+TAKQKovycRo0=
-github.com/coreos/updateservicectl v1.4.0 h1:9rc9D3LHXciGwPGiz7mUgn/HUtLbrHLVuXAq0W9eQ3M=
-github.com/coreos/updateservicectl v2.1.0+incompatible h1:1+6+EYP9H/l2qsclzuIaZFQFkV+PFD9uehd2GjAPi2M=
-github.com/coreos/updateservicectl v2.1.0+incompatible/go.mod h1:L1vfNPzyOxHIKjWPWzK51UIINS8qwSrnI2ieJefRwes=
 github.com/olekukonko/ts v0.0.0-20140412220145-ecf753e7c962 h1:3ev7csw9n4tLCxb5mtYXooCeQIFmC8Iw+4VhrSBy4zk=
 github.com/olekukonko/ts v0.0.0-20140412220145-ecf753e7c962/go.mod h1:F/7q8/HZz+TXjlsoZQQKVYvXTZaFH4QRa3y+j1p7MS0=
 github.com/pborman/uuid v0.0.0-20180122190007-c65b2f87fee3 h1:9J0mOv1rXIBlRjQCiAGyx9C3dZZh5uIa3HU0oTV8v1E=
@@ -17,3 +14,5 @@ golang.org/x/net v0.0.0-20180530234432-1e491301e022 h1:MVYFTUmVD3/+ERcvRRI+P/C2+
 golang.org/x/net v0.0.0-20180530234432-1e491301e022/go.mod h1:mL1N/T3taQHkDXs73rZJwtUhF3w3ftmwwsq0BUmARs4=
 google.golang.org/api v0.0.0-20180603000442-8e296ef26005 h1:m1a5vhNDkQFbbYz9mbJE7dQ3LbA7O/h3J+1o+0Vf1aQ=
 google.golang.org/api v0.0.0-20180603000442-8e296ef26005/go.mod h1:4mhQ8q/RsB7i+udVvVy5NUi08OU8ZlA0gRVgrF7VFY0=
+launchpad.net/gocheck v0.0.0-20140225173054-000000000087 h1:Izowp2XBH6Ya6rv+hqbceQyw/gSGoXfH/UPoTGduL54=
+launchpad.net/gocheck v0.0.0-20140225173054-000000000087/go.mod h1:hj7XX3B/0A+80Vse0e+BUHsHMTEhd0O4cpUHr/e/BUM=

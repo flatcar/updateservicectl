@@ -1,9 +1,9 @@
 # How to Contribute
 
-CoreOS projects are [Apache 2.0 licensed](LICENSE) and accept contributions via
-GitHub pull requests.  This document outlines some of the conventions on
-development workflow, commit message formatting, contact points and other
-resources to make it easier to get your contribution accepted.
+Flatcar Container Linux projects are [Apache 2.0 licensed](LICENSE) and accept
+contributions via GitHub pull requests.  This document outlines some of the
+conventions on development workflow, commit message formatting, contact points
+and other resources to make it easier to get your contribution accepted.
 
 # Certificate of Origin
 
@@ -14,9 +14,10 @@ contribution. See the [DCO](DCO) file for details.
 
 # Email and Chat
 
-The project currently uses the general CoreOS email list and IRC channel:
-- Email: [coreos-dev](https://groups.google.com/forum/#!forum/coreos-dev)
-- IRC: #[coreos](irc://irc.freenode.org:6667/#coreos) IRC channel on freenode.org
+The project currently uses the general Flatcar Container Linux email list and
+IRC channel:
+- Email: [flatcar-linux-dev](https://groups.google.com/forum/#!forum/flatcar-linux-dev)
+- IRC: #[flatcar](irc://irc.freenode.org:6667/#flatcar) IRC channel on freenode.org
 
 Please avoid emailing maintainers found in the MAINTAINERS file directly. They
 are very busy and read the mailing lists.

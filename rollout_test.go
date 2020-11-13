@@ -4,7 +4,7 @@ import (
 	"bytes"
 	"testing"
 
-	"github.com/coreos/updateservicectl/client/update/v1"
+	"github.com/flatcar-linux/updateservicectl/client/update/v1"
 )
 
 func eq(a, b *update.Rollout) bool {
