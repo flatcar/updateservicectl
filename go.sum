@@ -1,11 +1,11 @@
 github.com/cheggaaa/pb v0.0.0-20140814072708-5e7fe2cfea55 h1:NVgKfprrOwAheA92IN4U8ItWGQBGnybg7fXCqGEkRuQ=
 github.com/cheggaaa/pb v0.0.0-20140814072708-5e7fe2cfea55/go.mod h1:pQciLPpbU0oxA0h+VJYYLxO+XeDQb5pZijXscXHm81s=
-github.com/coreos/go-omaha v0.0.0-20140530183003-bd37826a4f37 h1:hH8/QYg1780g178Bk0sN+2xG8Qvm6kLcdngSeroM0kA=
-github.com/coreos/go-omaha v0.0.0-20140530183003-bd37826a4f37/go.mod h1:IU76HHVFspEz6YCsXufWBCTPBPbL86JSct4XvXfZPMA=
 github.com/coreos/go-semver v0.0.0-20140704231441-6fe83ccda8fb h1:kEZpAgkWdDhSB+mNhqtDYFy5laC0GgZ6FLJDcNqu/PM=
 github.com/coreos/go-semver v0.0.0-20140704231441-6fe83ccda8fb/go.mod h1:nnelYz7RCh+5ahJtPPxZlU+153eP4D4r3EedlOD2RNk=
 github.com/coreos/hawk-go v0.0.0-20151113011121-e2691d10fc25 h1:eYVvy3NBpDY/2c0hgLCD2QhVrPVUVOFa36WfqhqyV44=
 github.com/coreos/hawk-go v0.0.0-20151113011121-e2691d10fc25/go.mod h1:yAVBs4OM2opFfxOx1NAfmH3sVlBzRT+TAKQKovycRo0=
+github.com/kinvolk/go-omaha v0.0.0-20140530183003-bd37826a4f37 h1:o3SUM8s7JilEXD3CL4HjBLpiBxJLOT/8nOwaDt/e/Os=
+github.com/kinvolk/go-omaha v0.0.0-20140530183003-bd37826a4f37/go.mod h1:0QyK8anlK4QNiDeGWCFJ7bqSVG93uw9qrCq/wy+pHeM=
 github.com/olekukonko/ts v0.0.0-20140412220145-ecf753e7c962 h1:3ev7csw9n4tLCxb5mtYXooCeQIFmC8Iw+4VhrSBy4zk=
 github.com/olekukonko/ts v0.0.0-20140412220145-ecf753e7c962/go.mod h1:F/7q8/HZz+TXjlsoZQQKVYvXTZaFH4QRa3y+j1p7MS0=
 github.com/pborman/uuid v0.0.0-20180122190007-c65b2f87fee3 h1:9J0mOv1rXIBlRjQCiAGyx9C3dZZh5uIa3HU0oTV8v1E=

@@ -12,7 +12,7 @@ import (
 	"text/tabwriter"
 	"time"
 
-	"github.com/coreos/go-omaha/omaha"
+	"github.com/kinvolk/go-omaha/omaha"
 	"github.com/pborman/uuid"
 
 	update "github.com/flatcar-linux/updateservicectl/client/update/v1"
