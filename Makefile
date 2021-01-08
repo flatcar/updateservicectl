@@ -1,7 +1,7 @@
 .PHONY:	all clean vendor api-gen
 export CGO_ENABLED:=0
 
-REPO=github.com/flatcar-linux/updateservicectl
+REPO=github.com/kinvolk/updateservicectl
 ROLLER_URL ?= http://localhost:8000
 
 all:

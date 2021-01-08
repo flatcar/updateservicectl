@@ -9,9 +9,9 @@ import (
 	"strings"
 	"text/tabwriter"
 
-	"github.com/flatcar-linux/updateservicectl/auth"
-	"github.com/flatcar-linux/updateservicectl/client/update/v1"
-	"github.com/flatcar-linux/updateservicectl/version"
+	"github.com/kinvolk/updateservicectl/auth"
+	"github.com/kinvolk/updateservicectl/client/update/v1"
+	"github.com/kinvolk/updateservicectl/version"
 )
 
 const (

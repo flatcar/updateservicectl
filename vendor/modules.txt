@@ -1,7 +1,7 @@
 # github.com/cheggaaa/pb v0.0.0-20140814072708-5e7fe2cfea55
 ## explicit
 github.com/cheggaaa/pb
-# github.com/coreos/go-semver v0.0.0-20140704231441-6fe83ccda8fb
+# github.com/coreos/go-semver v0.3.0
 ## explicit
 github.com/coreos/go-semver/semver
 # github.com/coreos/hawk-go v0.0.0-20151113011121-e2691d10fc25
@@ -25,5 +25,7 @@ golang.org/x/net/context/ctxhttp
 google.golang.org/api/gensupport
 google.golang.org/api/googleapi
 google.golang.org/api/googleapi/internal/uritemplates
+# gopkg.in/yaml.v2 v2.4.0
+## explicit
 # launchpad.net/gocheck v0.0.0-20140225173054-000000000087
 ## explicit

@@ -7,8 +7,8 @@ import (
 	"text/tabwriter"
 	"text/template"
 
-	"github.com/flatcar-linux/updateservicectl/client/update/v1"
-	"github.com/flatcar-linux/updateservicectl/version"
+	"github.com/kinvolk/updateservicectl/client/update/v1"
+	"github.com/kinvolk/updateservicectl/version"
 )
 
 var (
