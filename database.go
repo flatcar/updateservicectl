@@ -9,7 +9,7 @@ import (
 	"os"
 	"text/tabwriter"
 
-	"github.com/flatcar-linux/updateservicectl/client/update/v1"
+	"github.com/kinvolk/updateservicectl/client/update/v1"
 )
 
 var (

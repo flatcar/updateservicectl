@@ -1,8 +1,8 @@
-FROM golang:1.6
+FROM golang:1.15
 
-WORKDIR /gopath/src/github.com/flatcar-linux/updateservicectl
-ADD . /gopath/src/github.com/flatcar-linux/updateservicectl
-RUN go get github.com/flatcar-linux/updateservicectl
+WORKDIR /gopath/src/github.com/kinvolk/updateservicectl
+ADD . /gopath/src/github.com/kinvolk/updateservicectl
+RUN go install github.com/kinvolk/updateservicectl
 
 CMD []
 ENTRYPOINT ["/go/bin/updateservicectl"]

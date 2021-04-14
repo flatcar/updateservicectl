@@ -1,15 +1,15 @@
 # github.com/cheggaaa/pb v0.0.0-20140814072708-5e7fe2cfea55
 ## explicit
 github.com/cheggaaa/pb
-# github.com/coreos/go-omaha v0.0.0-20140530183003-bd37826a4f37
-## explicit
-github.com/coreos/go-omaha/omaha
-# github.com/coreos/go-semver v0.0.0-20140704231441-6fe83ccda8fb
+# github.com/coreos/go-semver v0.3.0
 ## explicit
 github.com/coreos/go-semver/semver
 # github.com/coreos/hawk-go v0.0.0-20151113011121-e2691d10fc25
 ## explicit
 github.com/coreos/hawk-go
+# github.com/kinvolk/go-omaha v0.0.0-20140530183003-bd37826a4f37
+## explicit
+github.com/kinvolk/go-omaha/omaha
 # github.com/olekukonko/ts v0.0.0-20140412220145-ecf753e7c962
 ## explicit
 github.com/olekukonko/ts
@@ -25,5 +25,7 @@ golang.org/x/net/context/ctxhttp
 google.golang.org/api/gensupport
 google.golang.org/api/googleapi
 google.golang.org/api/googleapi/internal/uritemplates
+# gopkg.in/yaml.v2 v2.4.0
+## explicit
 # launchpad.net/gocheck v0.0.0-20140225173054-000000000087
 ## explicit

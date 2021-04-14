@@ -16,7 +16,7 @@ function checkout {
     ver=${2}
 
     if [ ! -d ${proj} ]; then
-        git clone git@github.com:flatcar-linux/${proj}.git
+        git clone git@github.com:kinvolk/${proj}.git
     fi
 
     cd ${proj}
