@@ -5,7 +5,7 @@ import (
 	"log"
 	"text/tabwriter"
 
-	"github.com/kinvolk/updateservicectl/client/update/v1"
+	"github.com/flatcar/updateservicectl/client/update/v1"
 )
 
 var (

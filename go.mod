@@ -1,4 +1,4 @@
-module github.com/kinvolk/updateservicectl
+module github.com/flatcar/updateservicectl
 
 go 1.14
 
