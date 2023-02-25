@@ -9,7 +9,7 @@ require (
 	github.com/kinvolk/go-omaha v0.0.0-20140530183003-bd37826a4f37
 	github.com/olekukonko/ts v0.0.0-20140412220145-ecf753e7c962 // indirect
 	github.com/pborman/uuid v0.0.0-20180122190007-c65b2f87fee3
-	golang.org/x/net v0.0.0-20210505214959-0714010a04ed
+	golang.org/x/net v0.7.0
 	google.golang.org/api v0.0.0-20180603000442-8e296ef26005
 	gopkg.in/yaml.v2 v2.4.0 // indirect
 	launchpad.net/gocheck v0.0.0-20140225173054-000000000087 // indirect
